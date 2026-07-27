@@ -2,32 +2,75 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ask Her Out</title>
-
-  <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ask Her Out ❤️</title>
+    <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-  <div class="container">
-    <div class="tenor-gif-embed" data-postid="15974530976611222074" data-share-method="host" data-aspect-ratio="1.26923"
-      data-width="100%">
-      <a href="https://tenor.com/view/peach-goma-phone-gif-15974530976611222074">Peach Goma Phone Sticker</a>from
-      <a href="https://tenor.com/search/peach+goma-stickers">Peach Goma Stickers</a>
+    <div class="container">
+        <div class="tenor-gif-embed" data-postid="15974530976611222074" data-share-method="host" data-aspect-ratio="1.26923"
+            data-width="100%">
+            <a href="https://tenor.com/view/peach-goma-phone-gif-15974530976611222074">Peach Goma Phone Sticker</a>from
+            <a href="https://tenor.com/search/peach+goma-stickers">Peach Goma Stickers</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+        <h1>beautiful pls Man jao na! Kitna code likh waogi😭</h1>
+        <p>bhut glt baat hai yrr😭</p>
+
+        <!-- No Click Counter -->
+        <div id="no-counter" style="margin-top: 15px; font-size: 18px; color: #ff6b6b; font-weight: bold;"></div>
+
+        <div class="btn">
+            <a href="yes.html" class="yes-btn">Yes ❤️</a>
+            <a href="#" id="move-random" class="no-btn running-btn">No 😢</a>
+        </div>
     </div>
-    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-    <h1>beautiful pls Man jao na! Kitna code likh waogi😭</h1>
-    <p>bhut glt baat hai yrr😭</p>
+    <script>
+        // No Click Counter
+        let noCount = localStorage.getItem('noClicks') || 0;
+        noCount = parseInt(noCount) + 1;
+        localStorage.setItem('noClicks', noCount);
 
-    <div class="btn">
-      <a href="yes.html">Yes</a>
-      <a href="#" id="move-random">No</a>
-    </div>
-  </div>
+        // Show counter
+        document.getElementById('no-counter').innerHTML = `You said No ${noCount} times! 😂`;
 
-  <script src="./script.js"></script>
+        // Move button function
+        function moveRandomEl(elm) {
+            elm.style.position = "fixed";
+            elm.style.top = Math.floor(Math.random() * 70 + 10) + "%";
+            elm.style.left = Math.floor(Math.random() * 70 + 10) + "%";
+            elm.style.transition = "all 0.2s ease";
+            elm.style.zIndex = "9999";
+        }
+
+        const moveRandom = document.querySelector("#move-random");
+
+        // Desktop hover
+        moveRandom.addEventListener("mouseenter", function(e) {
+            moveRandomEl(e.target);
+        });
+
+        // Mobile touch
+        moveRandom.addEventListener("touchstart", function(e) {
+            e.preventDefault();
+            moveRandomEl(e.target);
+        });
+
+        // Mobile click
+        moveRandom.addEventListener("click", function(e) {
+            e.preventDefault();
+            moveRandomEl(e.target);
+        });
+
+        // Also move on page load (so it starts in random position)
+        setTimeout(() => {
+            moveRandomEl(moveRandom);
+        }, 300);
+    </script>
 </body>
 
 </html>
