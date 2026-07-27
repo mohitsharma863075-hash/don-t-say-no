@@ -43,3 +43,52 @@
     border-radius: 66px;
     box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
   }
+  /* Pulse animation for Yes button */
+.yes-btn {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Glow effect for Yes button */
+.yes-btn:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    background: #ff6b6b;
+    color: white;
+}
+/* No button - mobile friendly */
+.no-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #ff4757;
+    color: white !important;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+}
+
+/* Make it bigger for mobile */
+@media (max-width: 600px) {
+    .no-btn {
+        padding: 15px 35px;
+        font-size: 18px;
+        min-width: 80px;
+        text-align: center;
+    }
+}
+
+/* Running button effect */
+.running-btn {
+    position: relative;
+    z-index: 1000;
+}
