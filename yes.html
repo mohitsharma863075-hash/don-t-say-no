@@ -11,6 +11,25 @@
 </head>
 
 <body>
+  <!-- Add this before </body> -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+<script>
+    // Fire confetti when page loads
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+    });
+    
+    // Fire more confetti after 1 second
+    setTimeout(() => {
+        confetti({
+            particleCount: 50,
+            spread: 100,
+            origin: { y: 0.6 }
+        });
+    }, 1000);
+</script>
   <div class="container">
     <div class="tenor-gif-embed" data-postid="253027946666209433" data-share-method="host" data-aspect-ratio="1.37853"
       data-width="100%">
